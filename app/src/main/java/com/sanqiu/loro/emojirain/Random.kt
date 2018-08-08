@@ -1,0 +1,26 @@
+package com.sanqiu.loro.emojirain
+
+/**
+ * Created by loro on 2018.07.20.
+ */
+internal class Random {
+
+    fun getRandom(lower: Float, upper: Float): Float {
+        val min = Math.min(lower, upper)
+        val max = Math.max(lower, upper)
+        return getRandom(max - min) + min
+    }
+
+    fun getRandom(upper: Float): Float {
+        return RANDOM.nextFloat() * upper
+    }
+
+    fun getRandom(upper: Int): Int {
+        return RANDOM.nextInt(upper)
+    }
+
+    companion object {
+        private val RANDOM = java.util.Random()
+    }
+
+}
